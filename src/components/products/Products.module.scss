@@ -13,10 +13,14 @@
 
   aside {
     background-color: rgb(238, 238, 238);
-  }
-  ul {
-    margin-bottom: 4rem;
 
+    & > div {
+      margin-bottom: 4rem;
+    }
+  }
+
+  ul {
+    margin-bottom: 1rem;
     li {
       margin-bottom: 0.5em;
     }

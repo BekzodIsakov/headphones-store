@@ -7,7 +7,7 @@ import { addProducts } from "../../store/productsSlice";
 
 const baseURL = import.meta.env.VITE_BASE_URL;
 
-const Products = ({cart, setCart}) => {
+const Products = ({ cart, setCart }) => {
   // const [products, setProducts] = useState([]);
   const products = useSelector((store) => store.productsReducer.products);
   const dispatch = useDispatch();
@@ -89,6 +89,7 @@ const Products = ({cart, setCart}) => {
               </li>
             ))}
           </ul>
+          <button onClick={() => setSelectedBrand("")}>Reset</button>
         </div>
 
         <div>
@@ -107,6 +108,7 @@ const Products = ({cart, setCart}) => {
               </li>
             ))}
           </ul>
+          <button onClick={() => setSelectedColor("")}>Reset</button>
         </div>
       </aside>
       <main>
@@ -115,7 +117,12 @@ const Products = ({cart, setCart}) => {
         ) : products.length ? (
           <div className={styles.grid}>
             {products.map((product) => (
-              <Card key={product.id} product={product} cart={cart} setCart={setCart} />
+              <Card
+                key={product.id}
+                product={product}
+                cart={cart}
+                setCart={setCart}
+              />
             ))}
           </div>
         ) : (
